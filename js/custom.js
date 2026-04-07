@@ -17,7 +17,7 @@
 	    loop:true,
 	    margin:10,
 	    nav:true
-	});
+	  });
 
     // SMOOTHSCROLL
     $(function() {
