@@ -356,7 +356,10 @@ document.getElementById("contactForm").addEventListener("submit", function(e) {
 
     let phoneNumber = "201107175122"; // حط رقمك بدون + 
 
-    let text = `رسالة جديدة من الموقع:%0Aالاسم: ${name}%0Aالرسالة: ${message} : الايميل الخاص به ${email}`;
+    let text = `رسالة جديدة من الموقع:%0A
+    الاسم: ${name} <br>
+    %0Aالرسالة: ${message} <br> 
+     ${email} : الايميل الخاص به `;
 
     let whatsappURL = `https://wa.me/${phoneNumber}?text=${text}`;
 
