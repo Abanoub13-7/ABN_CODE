@@ -288,7 +288,7 @@ https://www.tooplate.com/view/2115-marvel
                     <li><a href="https://www.facebook.com/share/16rhAEtTmP/" class="bx bxl-facebook" data-toggle="tooltip" data-placement="left" title="facebook"></a></li>
                     <li><a href="https://www.instagram.com/abanoub_eshak13?igsh=MW1tazNxbWRmZHRxdw==" class="bx bxl-instagram" data-toggle="tooltip" data-placement="left" title="Instagram"></a></li>
                     <li><a href="https://www.linkedin.com/in/abanoub-eshak-5aa268344?utm_source=share_via&utm_content=profile&utm_medium=member_android" class="bx bxl-linkedin" data-toggle="tooltip" data-placement="left" title="linkedin"></a></li>
-                    <li><a href="https://wa.me/20101107175122?text=مرحبا،%20عايز%20اتواصل%20معاكم" class="bx bxl-whatsapp" data-toggle="tooltip" data-placement="left" title="WhatsAPP"> </a></li>
+                    <li><a href="https://wa.me/201107175122?text=مرحبا،%20عايز%20اتواصل%20معاكم" class="bx bxl-whatsapp" data-toggle="tooltip" data-placement="left" title="WhatsAPP"> </a></li>
                     <li><a href="https://github.com/Abanoub13-7" class="bx bxl-github" data-toggle="tooltip" data-placement="left" title="github"></a></li>
                   </ul>
             </div>
@@ -298,7 +298,9 @@ https://www.tooplate.com/view/2115-marvel
             <div class="contact-form">
               <h2 class="mb-4">Interested to work together? Let's talk</h2>
 
-              <form action="" id="contactForm" method="get">
+              <!-- ارسال رسالة عن طريق الواتس اب  -->
+
+              <form id="contactForm" method="get">
                 <div class="row">
                   <div class="col-lg-6 col-12">
                     <input type="text" class="form-control" name="name" placeholder="Your Name" id="name" required>
@@ -313,7 +315,7 @@ https://www.tooplate.com/view/2115-marvel
                   </div>
 
                   <div class="ml-lg-auto col-lg-5 col-12">
-                    <input  type="submit" class="form-control submit-btn" value="Send Button">
+                    <button  type="submit" class="form-control submit-btn" value="Send Button">Send Button</button>
                   </div>
                 </div>
               </form>
@@ -343,7 +345,24 @@ https://www.tooplate.com/view/2115-marvel
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
       <!-- JAVASCRIPT FILES -->
+<script>
+  
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault(); // يمنع الفورم من الريلود
 
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let message = document.getElementById("message").value;
+
+    let phoneNumber = "201107175122"; // حط رقمك بدون + 
+
+    let text = `رسالة جديدة من الموقع:%0Aالاسم: ${name}%0Aالرسالة: ${message} : الايميل الخاص به ${email}`;
+
+    let whatsappURL = `https://wa.me/${phoneNumber}?text=${text}`;
+
+    window.open(whatsappURL, "_blank");
+});
+</script>
 
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/popper.min.js"></script>
