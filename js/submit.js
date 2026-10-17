@@ -1,16 +1,94 @@
+(function () {
+  "use strict";
 
-document.getElementById("contactForm").addEventListener("submit", function(e) {
-    e.preventDefault(); // يمنع الفورم من الريلود
+  const form = document.getElementById("contactForm");
+  if (!form) {
+    return;
+  }
 
-    let name = document.getElementById("name").value;
-    let numpebr = document.getElementById("number").value;
-    let message = document.getElementById("message").value;
+  const nameInput = document.getElementById("name");
+  const emailInput = document.getElementById("email");
+  const messageInput = document.getElementById("message");
+  const status = document.getElementById("contactFormStatus");
+  const submitButton = form.querySelector('button[type="submit"]');
+  let isSubmitting = false;
 
-    let phoneNumber = "201107175122"; // حط رقمك بدون + 
+  function showStatus(messageKey, type) {
+    status.setAttribute("data-i18n", messageKey);
+    status.textContent = window.portfolioLanguage.translate(messageKey);
+    status.className = "mt-3 mb-0 text-" + type;
+    status.hidden = false;
+  }
 
-    let text = `رسالة جديدة من الموقع:%0Aالاسم: ${name}%0Aالرسالة: ${message} : رقم هاتفه ${numpebr}`;
+  form.addEventListener("submit", async function (event) {
+    event.preventDefault();
+    if (isSubmitting) {
+      return;
+    }
 
-    let whatsappURL = `https://wa.me/${phoneNumber}?text=${text}`;
+    const name = nameInput.value.trim();
+    const email = emailInput.value.trim();
+    const message = messageInput.value.trim();
 
-    window.open(whatsappURL, "_blank");
-});
+    if (!name) {
+      showStatus("form.errorName", "danger");
+      nameInput.focus();
+      return;
+    }
+    if (!email || !emailInput.checkValidity()) {
+      showStatus("form.errorEmail", "danger");
+      emailInput.focus();
+      return;
+    }
+    if (!message) {
+      showStatus("form.errorMessage", "danger");
+      messageInput.focus();
+      return;
+    }
+
+    isSubmitting = true;
+    submitButton.disabled = true;
+    showStatus("form.sending", "muted");
+
+    try {
+      const formData = new FormData(form);
+      formData.set("name", name);
+      formData.set("email", email);
+      formData.set("message", message);
+      formData.set("_replyto", email);
+      formData.set(
+        "_subject",
+        window.portfolioLanguage.translate("form.emailSubject").replace("{name}", name)
+      );
+
+      const response = await fetch(form.action, {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: formData
+      });
+      const result = await response.json();
+      const resultMessage = result && typeof result.message === "string"
+        ? result.message
+        : "";
+      const activationRequired = /activat|verif|confirm/i.test(resultMessage);
+
+      if (activationRequired) {
+        showStatus("form.activation", "warning");
+        return;
+      }
+
+      if (!response.ok || !result || (result.success !== true && result.success !== "true")) {
+        showStatus("form.failure", "danger");
+        return;
+      }
+
+      showStatus("form.success", "success");
+      form.reset();
+    } catch {
+      showStatus("form.networkFailure", "danger");
+    } finally {
+      isSubmitting = false;
+      submitButton.disabled = false;
+    }
+  });
+})();

@@ -346,7 +346,8 @@ b, strong {
 	.feature-card .uil,
 	.navbar-light .navbar-brand,
 	h1, h2, h3, h4, h5, h6,
-	.color-mode {
+	.color-mode,
+	.language-toggle {
 		color: $text-white;
 	}
 	.owl-carousel {
@@ -417,6 +418,21 @@ b, strong {
 		span {
 			display: none;
 		}
+		button.owl-prev,
+		button.owl-next {
+			position: absolute;
+			top: 50%;
+			width: 48px;
+			height: 48px;
+			transform: translateY(-50%);
+			pointer-events: auto;
+		}
+		button.owl-prev {
+			left: -24px;
+		}
+		button.owl-next {
+			right: -24px;
+		}
 		.owl-prev,
 		.owl-next {
 			&:before {
@@ -425,28 +441,34 @@ b, strong {
 				display: block;
 				position: absolute;
 				top: 50%;
-				transform: translate(0, -50%); 
+				left: 50%;
+				transform: translate(-50%, -50%);
 				font-family: 'unicons';
-				font-size: 100px;
+				font-size: 64px;
 				line-height: normal;
+				pointer-events: none;
 			}
 		}
 		.owl-prev {
 			&:before {
 				content: '\e833';
-  				left: -45px; 
 			}
 		}
 		.owl-next {
 			&:before {
 				content: '\e836';
-  				right: -45px; 
 			}
 		}
 	}
 }
 
 .owl-theme {
+	.owl-nav {
+		position: absolute;
+		inset: 0;
+		margin: 0;
+		pointer-events: none;
+	}
 	.owl-nav [class*=owl-] {
 		background: none;
   		border-radius: 0;
@@ -479,6 +501,78 @@ b, strong {
 .google-map {
 	iframe {
 		width: 100%;
+	}
+}
+
+// Language toggle and RTL layout
+.language-toggle {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: $font-weight-bold;
+	cursor: pointer;
+	background: transparent;
+	border: 1px solid #d8d6e0;
+	color: #212121;
+	padding: 0.45rem 0.8rem;
+	border-radius: 999px;
+	&:focus {
+		outline: 2px solid $main-color;
+		outline-offset: 3px;
+	}
+}
+
+.dark-mode .language-toggle {
+	border-color: rgba(255, 255, 255, 0.35);
+}
+
+html[dir="rtl"] {
+	body {
+		font-family: Tahoma, Arial, sans-serif;
+	}
+
+	h1, h2, h3, h4, h5, h6, .animated-text {
+		letter-spacing: normal;
+	}
+
+	.project-meta,
+	.contact-form,
+	.contact-info-item,
+	.timeline-info,
+	.contact-form .form-control {
+		text-align: right;
+	}
+
+	.navbar-toggler {
+		margin-right: 0;
+		margin-left: 10px;
+	}
+
+	.color-mode-icon {
+		right: auto;
+		left: 6px;
+	}
+
+	.timeline-wrapper:before {
+		right: 38px;
+		left: auto;
+	}
+
+	.timeline-info {
+		margin-right: 6em;
+		margin-left: 0;
+		small {
+			margin-right: 15px;
+			margin-left: 0;
+		}
+	}
+
+	.owl-carousel .owl-nav .owl-prev:before {
+		content: '\e836';
+	}
+
+	.owl-carousel .owl-nav .owl-next:before {
+		content: '\e833';
 	}
 }
 
@@ -656,4 +750,3 @@ b, strong {
 		}
 	}
 }
-
