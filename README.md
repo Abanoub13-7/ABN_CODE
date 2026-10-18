@@ -1,4 +1,3 @@
-::: {align="center"}
 # ABN Code --- Personal Portfolio
 
 **A showcase of web development projects, responsive interfaces, and
@@ -136,6 +135,4 @@ reusing personal branding, project content, or assets.
 
 ------------------------------------------------------------------------
 
-::: {align="center"}
-**Built with care by Abanoub Eshak · ABN Code**
-:::
+
