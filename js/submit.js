@@ -20,6 +20,18 @@
     status.hidden = false;
   }
 
+  function markInvalid(input) {
+    input.setAttribute("aria-invalid", "true");
+    input.setAttribute("aria-describedby", "contactFormStatus");
+    input.focus();
+  }
+
+  [nameInput, emailInput, messageInput].forEach(function (input) {
+    input.addEventListener("input", function () {
+      input.removeAttribute("aria-invalid");
+    });
+  });
+
   form.addEventListener("submit", async function (event) {
     event.preventDefault();
     if (isSubmitting) {
@@ -32,21 +44,22 @@
 
     if (!name) {
       showStatus("form.errorName", "danger");
-      nameInput.focus();
+      markInvalid(nameInput);
       return;
     }
     if (!email || !emailInput.checkValidity()) {
       showStatus("form.errorEmail", "danger");
-      emailInput.focus();
+      markInvalid(emailInput);
       return;
     }
     if (!message) {
       showStatus("form.errorMessage", "danger");
-      messageInput.focus();
+      markInvalid(messageInput);
       return;
     }
 
     isSubmitting = true;
+    form.setAttribute("aria-busy", "true");
     submitButton.disabled = true;
     showStatus("form.sending", "muted");
 
@@ -88,6 +101,7 @@
       showStatus("form.networkFailure", "danger");
     } finally {
       isSubmitting = false;
+      form.removeAttribute("aria-busy");
       submitButton.disabled = false;
     }
   });

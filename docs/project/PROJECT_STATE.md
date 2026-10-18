@@ -130,3 +130,7 @@ Phase 5 remains not started. Phase 4 still requires FormSubmit recipient activat
 - **BLOCKED:** the repository test runner found no test files; targeted browser checks were run directly.
 - **Files changed:** `js/custom.js`, `css/tooplate-style.css`, `sass/tooplate-style.scss`, and the four project records (`BASELINE_TESTS.md`, `PROJECT_STATE.md`, `PROJECT_ROADMAP.md`, `KNOWN_ISSUES.md`). `index.html`, project image files, and language data were not changed.
 - The existing Phase 4 external CV-download/FormSubmit blockers and Phase 5 status are unchanged. No project phase was started.
+
+## Projects gallery update — 2026-10-18
+
+Carousel expanded to seven projects with new screenshots and AR/EN text. Details and tests: `PROJECTS_GALLERY_UPDATE.md`. Other phase statuses unchanged.

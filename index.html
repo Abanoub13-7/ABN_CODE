@@ -5,9 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Abanoub Eshak is a web designer and front-end developer creating responsive, user-focused digital experiences." data-i18n="meta.description" data-i18n-attr="content">
     <meta name="author" content="Abanoub Eshak">
-    <meta name="theme-color" content="#474559">
+    <meta name="theme-color" content="#0B1020">
+    <meta name="color-scheme" content="dark light">
 
     <title data-i18n="meta.title">Abanoub Eshak | Web Designer &amp; Front-End Developer</title>
+
+    <!-- Progressive enhancement only: system fonts are used if this host is unreachable -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap">
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/unicons.css">
@@ -29,11 +35,27 @@ Tooplate Abanoub
 https://www.tooplate.com/view/2115-marvel
 
 -->
+    <!-- Scroll reveals are only armed when IntersectionObserver exists and motion is allowed -->
+    <script>
+      (function () {
+        var d = document.documentElement;
+        try {
+          if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            d.className += ' reveal-on';
+            // If custom.js never confirms (script blocked/failed), disarm so content cannot stay hidden
+            setTimeout(function () {
+              if (!window.__revealReady) { d.className = d.className.replace(/\breveal-on\b/, '').trim(); }
+            }, 4000);
+          }
+        } catch (e) {}
+      })();
+    </script>
+    <noscript><style>.owl-carousel{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:1.5rem}</style></noscript>
   </head>
-  <body>
+  <body class="dark-mode">
 
     <!-- MENU -->
-    <nav class="navbar navbar-expand-sm navbar-light">
+    <nav class="navbar navbar-expand-lg navbar-light" aria-label="Main">
         <div class="container">
             <a class="navbar-brand" href="index.html"><i class='uil uil-user'></i> ABN-CODE</a>
 
@@ -45,7 +67,7 @@ https://www.tooplate.com/view/2115-marvel
             </button>
 
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto">
+                <ul class="navbar-nav nav-main">
                     <li class="nav-item">
                         <a href="#about" class="nav-link"><span data-hover="About" data-i18n="nav.about" data-i18n-attr="data-hover" data-i18n-text="true">About</span></a>
                     </li>
@@ -60,15 +82,15 @@ https://www.tooplate.com/view/2115-marvel
                     </li>
                 </ul>
 
-                <ul class="navbar-nav ml-lg-auto">
-                    <li class="nav-item ml-lg-4">
-                      <button type="button" class="color-mode d-lg-flex justify-content-center align-items-center" aria-label="Toggle color mode" aria-pressed="false" data-i18n="theme.aria" data-i18n-attr="aria-label">
-                        <i class="color-mode-icon" aria-hidden="true"></i>
+                <ul class="navbar-nav nav-tools">
+                    <li class="nav-item">
+                      <button type="button" class="color-mode active" aria-label="Toggle color mode" aria-pressed="true" data-i18n="theme.aria" data-i18n-attr="aria-label">
+                        <i class="color-mode-icon active" aria-hidden="true"></i>
                         <span data-i18n="theme.label">Color mode</span>
                       </button>
                     </li>
-                    <li class="nav-item ml-lg-2">
-                      <button type="button" id="languageToggle" class="language-toggle justify-content-center align-items-center" aria-label="Switch language to Arabic" data-i18n="language.switchToArabic" data-i18n-attr="aria-label">
+                    <li class="nav-item">
+                      <button type="button" id="languageToggle" class="language-toggle" aria-label="Switch language to Arabic" data-i18n="language.switchToArabic" data-i18n-attr="aria-label">
                         <span data-i18n="language.buttonArabic">العربية</span>
                       </button>
                     </li>
@@ -78,15 +100,15 @@ https://www.tooplate.com/view/2115-marvel
     </nav>
 
     <!-- ABOUT -->
-    <section class="about full-screen d-lg-flex justify-content-center align-items-center" id="about">
+    <section class="about full-screen" id="about">
         <div class="container">
             <div class="row">
                 
                 <div class="col-lg-7 col-md-12 col-12 d-flex align-items-center">
-                    <div class="about-text">
+                    <div class="about-text reveal">
                         <small class="small-text"><span data-i18n="hero.welcome">Welcome to</span> <span class="mobile-block" data-i18n="hero.portfolio">my portfolio website!</span></small>
                         <h1 class="animated animated-text">
-                            <span class="mr-2" data-i18n="hero.greeting">Hey folks, I'm</span>
+                            <span class="hero-greeting" data-i18n="hero.greeting">Hey folks, I'm</span>
                                 <div class="animated-info">
                                     <span class="animated-item">Abanoub </span>
                                     <span class="animated-item" data-i18n="hero.roleDesigner">Web Designer</span>
@@ -96,15 +118,15 @@ https://www.tooplate.com/view/2115-marvel
 
                         <p data-i18n="hero.description">Building a successful product is a challenge. I am highly energetic in user experience design, interfaces and web development.</p>
                         
-                        <div class="custom-btn-group mt-4">
-                          <a href="assets/files/Abanoub-Eshak-CV.pdf" download="Abanoub-Eshak-CV.pdf" class="btn mr-lg-2 custom-btn"><i class='uil uil-file-alt'></i> <span data-i18n="hero.downloadCv">Download CV</span></a>
+                        <div class="custom-btn-group">
+                          <a href="assets/files/Abanoub-Eshak-CV.pdf" download="Abanoub-Eshak-CV.pdf" class="btn custom-btn"><i class='uil uil-file-alt'></i> <span data-i18n="hero.downloadCv">Download CV</span></a>
                           <a href="#contact" class="btn custom-btn custom-btn-bg custom-btn-link" data-i18n="hero.quote">Get a free quote</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-lg-5 col-md-12 col-12">
-                    <div class="about-image svg">
+                    <div class="about-image svg reveal reveal-d2">
                         <img src="images/undraw/protfolio.jpeg" class="img-fluid" alt="Abanoub Eshak portfolio illustration" data-i18n="image.portfolio" data-i18n-attr="alt" width="1408" height="768">
                     </div>
                 </div>
@@ -114,72 +136,108 @@ https://www.tooplate.com/view/2115-marvel
     </section>
 
     <!-- PROJECTS -->
-    <section class="project py-5" id="project">
+    <section class="project" id="project">
         <div class="container">
                 
                 <div class="row">
                   <div class="col-lg-11 text-center mx-auto col-12">
 
                       <div class="col-lg-8 mx-auto">
-                        <h2 style="margin-bottom: 40px;" data-i18n="projects.heading">Things I have designed for digital media agencies</h2>
+                        <h2 class="section-title reveal" data-i18n="projects.heading">Things I have designed for digital media agencies</h2>
                       </div>
 
-                      <div class="owl-carousel owl-theme">
+                      <div class="owl-carousel owl-theme reveal reveal-d1">
                         <div class="item">
                           <div class="project-info">
-                            <a href="https://abanoub13-7.github.io/products-/" target="_blank" rel="noopener noreferrer" aria-label="Open CRUD Products project" data-i18n="project.crudLink" data-i18n-attr="aria-label">
-                              <img src="images/project/cruds.png" class="img-fluid" alt="CRUD Products project preview" data-i18n="project.crudAlt" data-i18n-attr="alt" width="1297" height="643" loading="lazy" decoding="async">
+                            <a href="https://abanoub13-7.github.io/products-/" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
+                              <img src="images/project/crud-products.jpg" class="img-fluid" alt="Mobile screenshot of the CRUD Products management form and product table" data-i18n="project.crudAlt" data-i18n-attr="alt" width="1080" height="2136" loading="lazy" decoding="async">
                             </a>
                             <div class="project-meta">
                               <h3 data-i18n="project.crudName">CRUD Products</h3>
-                              <p data-i18n="project.crudDescription">Project showcase for a product catalog and management interface.</p>
+                              <p data-i18n="project.crudDescription">Product management interface with fields for title, price, taxes, ads, discount, count and category, plus a product table with search by title or category.</p>
+                              <a class="project-cta" href="https://abanoub13-7.github.io/products-/" target="_blank" rel="noopener noreferrer" aria-label="Open CRUD Products project" data-i18n="project.view" data-i18n-attr="aria-label" data-i18n-aria-label="project.crudLink" data-i18n-text="true">View project</a>
                             </div>
                           </div>
                         </div>
 
                         <div class="item">
                           <div class="project-info">
-                            <a href="https://abanoub13-7.github.io/My-Curch-Website/" target="_blank" rel="noopener noreferrer" aria-label="Open My Church Website project" data-i18n="project.churchLink" data-i18n-attr="aria-label">
-                              <img src="images/project/my curch .png" class="img-fluid" alt="My Church Website project preview" data-i18n="project.churchAlt" data-i18n-attr="alt" width="1290" height="768" loading="lazy" decoding="async">
+                            <a href="https://abanoub13-7.github.io/My-Curch-Website/" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
+                              <img src="images/project/my-church.jpg" class="img-fluid" alt="Mobile screenshot of the My Church dashboard with member statistics and a new attendance session button" data-i18n="project.churchAlt" data-i18n-attr="alt" width="1080" height="3392" loading="lazy" decoding="async">
                             </a>
                             <div class="project-meta">
                               <h3 data-i18n="project.churchName">My Church Website</h3>
-                              <p data-i18n="project.churchDescription">Church website with parish information, schedules, and event registration.</p>
+                              <p data-i18n="project.churchDescription">Mobile dashboard interface for a church: members served, active and new members, upcoming events, open follow-up tasks, insights, and a button to start an attendance session.</p>
+                              <a class="project-cta" href="https://abanoub13-7.github.io/My-Curch-Website/" target="_blank" rel="noopener noreferrer" aria-label="Open My Church Website project" data-i18n="project.view" data-i18n-attr="aria-label" data-i18n-aria-label="project.churchLink" data-i18n-text="true">View project</a>
                             </div>
                           </div>
                         </div>
 
                         <div class="item">
                           <div class="project-info">
-                            <a href="https://abanoub13-7.github.io/photo-artiste/" target="_blank" rel="noopener noreferrer" aria-label="Open Photo Artiste project" data-i18n="project.artistLink" data-i18n-attr="aria-label">
-                              <img src="images/project/artist.png" class="img-fluid" alt="Photo Artiste project preview" data-i18n="project.artistAlt" data-i18n-attr="alt" width="1301" height="720" loading="lazy" decoding="async">
+                            <a href="https://abanoub13-7.github.io/photo-artiste/" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
+                              <img src="images/project/photo-artiste.jpg" class="img-fluid" alt="Mobile screenshot of the Photo Artiste exhibition page with a portrait drawing slider" data-i18n="project.artistAlt" data-i18n-attr="alt" width="1080" height="2796" loading="lazy" decoding="async">
                             </a>
                             <div class="project-meta">
                               <h3 data-i18n="project.artistName">Photo Artiste</h3>
-                              <p data-i18n="project.artistDescription">Creative portfolio project for an artist showcase.</p>
+                              <p data-i18n="project.artistDescription">Artist exhibition page showing portrait drawings in an image slider with arrows and indicator dots, followed by a larger gallery view.</p>
+                              <a class="project-cta" href="https://abanoub13-7.github.io/photo-artiste/" target="_blank" rel="noopener noreferrer" aria-label="Open Photo Artiste project" data-i18n="project.view" data-i18n-attr="aria-label" data-i18n-aria-label="project.artistLink" data-i18n-text="true">View project</a>
                             </div>
                           </div>
                         </div>
 
                         <div class="item">
                           <div class="project-info">
-                            <a href="https://prayar-123.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Open PrayAR project" data-i18n="project.prayarLink" data-i18n-attr="aria-label">
-                              <img src="images/project/prayar.png" class="img-fluid" alt="PrayAR project preview" data-i18n="project.prayarAlt" data-i18n-attr="alt" width="1317" height="647" loading="lazy" decoding="async">
+                            <a href="https://prayar-123.vercel.app/" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
+                              <img src="images/project/prayar.jpg" class="img-fluid" alt="Mobile screenshot of the PrayAR prayer times page showing the five daily prayers" data-i18n="project.prayarAlt" data-i18n-attr="alt" width="1079" height="2124" loading="lazy" decoding="async">
                             </a>
                             <div class="project-meta">
                               <h3 data-i18n="project.prayarName">PrayAR</h3>
-                              <p data-i18n="project.prayarDescription">Interactive project showcase linked to the live preview.</p>
+                              <p data-i18n="project.prayarDescription">Arabic prayer times page with a city selector, today's date, the five daily prayers, the current prayer highlighted, and a progress bar to the next prayer.</p>
+                              <a class="project-cta" href="https://prayar-123.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Open PrayAR project" data-i18n="project.view" data-i18n-attr="aria-label" data-i18n-aria-label="project.prayarLink" data-i18n-text="true">View project</a>
                             </div>
                           </div>
                         </div>
 
-                        <!-- <div class="item">
+                        <div class="item">
                           <div class="project-info">
-                            <a href="#">
-                              <img src="images/project/project-image05.png" class="img-fluid" alt="project image">
+                            <a href="https://bride-list.vercel.app/" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
+                              <img src="images/project/bride-list.jpg" class="img-fluid" alt="Mobile screenshot of the Bride List app with the wedding countdown and preparation summary" data-i18n="project.brideAlt" data-i18n-attr="alt" width="1080" height="3196" loading="lazy" decoding="async">
                             </a>
+                            <div class="project-meta">
+                              <h3 data-i18n="project.brideName">Bride List</h3>
+                              <p data-i18n="project.brideDescription">Arabic wedding preparation checklist with an add-item button, a wedding-day countdown, and a summary of total, completed and remaining items with overall progress.</p>
+                              <a class="project-cta" href="https://bride-list.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Open Bride List project" data-i18n="project.view" data-i18n-attr="aria-label" data-i18n-aria-label="project.brideLink" data-i18n-text="true">View project</a>
+                            </div>
                           </div>
-                        </div> -->
+                        </div>
+
+                        <div class="item">
+                          <div class="project-info">
+                            <a href="https://juice-menu-eight.vercel.app/" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
+                              <img src="images/project/juice-menu.jpg" class="img-fluid" alt="Mobile screenshot of the Juice Menu app with category tabs and a drink price list" data-i18n="project.juiceAlt" data-i18n-attr="alt" width="1080" height="3190" loading="lazy" decoding="async">
+                            </a>
+                            <div class="project-meta">
+                              <h3 data-i18n="project.juiceName">Juice Menu</h3>
+                              <p data-i18n="project.juiceDescription">Mobile digital menu for a juice shop with category tabs, a featured banner with a browse-menu button, and a price list of drinks.</p>
+                              <a class="project-cta" href="https://juice-menu-eight.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Open Juice Menu project" data-i18n="project.view" data-i18n-attr="aria-label" data-i18n-aria-label="project.juiceLink" data-i18n-text="true">View project</a>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="item">
+                          <div class="project-info">
+                            <a href="https://devoosaas.vercel.app/" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
+                              <img src="images/project/devoo-saas.jpg" class="img-fluid" alt="Mobile screenshot of the Devoo SaaS storefront landing page with hero section and product images" data-i18n="project.devooAlt" data-i18n-attr="alt" width="1080" height="2952" loading="lazy" decoding="async">
+                            </a>
+                            <div class="project-meta">
+                              <h3 data-i18n="project.devooName">Devoo SaaS</h3>
+                              <p data-i18n="project.devooDescription">Arabic storefront landing page for home goods and décor, with a hero message, shop and why-Devoo buttons, product imagery, and a delivery note.</p>
+                              <a class="project-cta" href="https://devoosaas.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Open Devoo SaaS project" data-i18n="project.view" data-i18n-attr="aria-label" data-i18n-aria-label="project.devooLink" data-i18n-text="true">View project</a>
+                            </div>
+                          </div>
+                        </div>
+
                       </div>
 
                   </div>
@@ -188,35 +246,35 @@ https://www.tooplate.com/view/2115-marvel
     </section>
 
     <!-- FEATURES -->
-    <section class="resume py-5 d-lg-flex justify-content-center align-items-center" id="resume">
+    <section class="resume" id="resume">
         <div class="container">
             <div class="row">
 
                 <div class="col-lg-6 col-12">
-                  <h2 class="mb-4" data-i18n="resume.projects"> PROJECTS</h2>
+                  <h2 class="section-title reveal" data-i18n="resume.projects"> PROJECTS</h2>
                   
-                  <div class="timeline-wrapper">
+                  <div class="timeline-wrapper reveal">
                       <div class="timeline-yr">
                           <span>2025</span>
                       </div>
                       <div class="timeline-info">
                           <h3><span data-i18n="experience.churchTitle"> Church Management Website </span> <small> HTML, CSS, JavaScript, Firebase</small></h3>
-                          <p data-i18n="experience.churchDescription">Designed and developed a comprehensive website for a local church including news, parish information, population census, and service schedules. Added interactive modules for event photo galeries, confession appointment booking, and trip registrations.</p>
+                          <p data-i18n="experience.churchDescription">Designed and developed a comprehensive website for a local church including news, parish information, population census, and service schedules. Added interactive modules for event photo galleries, confession appointment booking, and trip registrations.</p>
                       </div>
                   </div>
                   
                     <div class="timeline">
-                        <div class="timeline-wrapper">
+                        <div class="timeline-wrapper reveal">
                               <div class="timeline-yr">
                                   <span>2025</span>
                               </div>
                               <div class="timeline-info">
                                   <h3><span data-i18n="experience.instituteTitle"> October Higher Institute Website</span><small> HTML, CSS, JavaScript</small></h3>
-                                  <p data-i18n="experience.instituteDescription">Created a dynamic website for October Higher Institute for Engineering and Technology. Implemented sections for institute details, inquiries, contact forms, student registration,photo galeries, and a feedback system with ratings.</p>
+                                  <p data-i18n="experience.instituteDescription">Created a dynamic website for October Higher Institute for Engineering and Technology. Implemented sections for institute details, inquiries, contact forms, student registration, photo galleries, and a feedback system with ratings.</p>
                               </div>
                         </div>
 
-                        <div class="timeline-wrapper">
+                        <div class="timeline-wrapper reveal">
                             <div class="timeline-yr">
                                 <span>2024</span>
                             </div>
@@ -227,7 +285,7 @@ https://www.tooplate.com/view/2115-marvel
                         </div>
 
                         
-                        <!-- <div class="timeline-wrapper">
+                        <!-- <div class="timeline-wrapper reveal">
                             <div class="timeline-yr">
                                 <span>2014</span>
                             </div>
@@ -241,10 +299,10 @@ https://www.tooplate.com/view/2115-marvel
                 </div>
 
                 <div class="col-lg-6 col-12">
-                  <h2 class="mb-4 mobile-mt-2" data-i18n="education.heading">Educations</h2>
+                  <h2 class="section-title mobile-mt-2 reveal" data-i18n="education.heading">Educations</h2>
 
                     <div class="timeline">
-                        <div class="timeline-wrapper">
+                        <div class="timeline-wrapper reveal">
                               <div class="timeline-yr">
                                   <span>2025</span>
                               </div>
@@ -258,7 +316,7 @@ https://www.tooplate.com/view/2115-marvel
                               </div>
                         </div>
 
-                        <div class="timeline-wrapper">
+                        <div class="timeline-wrapper reveal">
                             <div class="timeline-yr">
                                 <span>2024</span>
                             </div>
@@ -270,7 +328,7 @@ https://www.tooplate.com/view/2115-marvel
                             </div>
                         </div>
                         
-                        <!-- <div class="timeline-wrapper">
+                        <!-- <div class="timeline-wrapper reveal">
                             <div class="timeline-yr">
                                 <span>2013</span>
                             </div>
@@ -288,18 +346,18 @@ https://www.tooplate.com/view/2115-marvel
     </section>
 
     <!-- CONTACT -->
-    <section class="contact py-5" id="contact">
+    <section class="contact" id="contact">
       <div class="container">
         <div class="row">
           
-          <div class="col-lg-5 mr-lg-5 col-12">
+          <div class="col-lg-5 col-12 contact-aside reveal">
             <div class="google-map w-100">
               <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d6282.976355618286!2d30.56553030000001!3d30.663453500000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sar!2seg!4v1757524109309!5m2!1sar!2seg" width="400" height="300" frameborder="0" style="border:0" allowfullscreen title="Google Maps location" data-i18n="contact.mapTitle" data-i18n-attr="title"></iframe>
             </div>
 
-            <div class="contact-info d-flex justify-content-between align-items-center py-4 px-lg-5">
+            <div class="contact-info">
                 <div class="contact-info-item">
-                  <h3 class="mb-3 text-white" data-i18n="contact.heading"> To contact me!</h3>
+                  <h3 data-i18n="contact.heading"> To contact me!</h3>
                   <p class="footer-text mb-0"><i class='bx bx-phone' aria-hidden="true"></i> 011 0717 5122</p>
                   <p><a href="mailto:beboeshak70@gmail.com"><i class='bx bx-envelope-open' aria-hidden="true"></i> beboeshak70@gmail.com</a></p>
                 </div>
@@ -314,29 +372,32 @@ https://www.tooplate.com/view/2115-marvel
             </div>
           </div>
 
-          <div class="col-lg-6 col-12">
+          <div class="col-lg-6 col-12 contact-main reveal reveal-d1">
             <div class="contact-form">
-              <h2 class="mb-4" data-i18n="contact.formHeading">Interested to work together? Let's talk</h2>
+              <h2 class="section-title" data-i18n="contact.formHeading">Interested to work together? Let's talk</h2>
 
               <form id="contactForm" action="https://formsubmit.co/ajax/beboeshak70@gmail.com" method="POST" novalidate>
                 <div class="row">
                   <div class="col-lg-6 col-12">
-                    <input type="text" class="form-control" name="name" placeholder="Your Name" id="name" required data-i18n="form.name" data-i18n-attr="placeholder">
+                    <label class="sr-only" for="name" data-i18n="form.name">Your Name</label>
+                    <input type="text" class="form-control" name="name" autocomplete="name" placeholder="Your Name" id="name" required data-i18n="form.name" data-i18n-attr="placeholder">
                   </div>
 
                   <div class="col-lg-6 col-12">
-                    <input type="email" class="form-control" name="email" placeholder="Your email" id="email" required data-i18n="form.email" data-i18n-attr="placeholder">
+                    <label class="sr-only" for="email" data-i18n="form.email">Your email</label>
+                    <input type="email" class="form-control" name="email" autocomplete="email" placeholder="Your email" id="email" required data-i18n="form.email" data-i18n-attr="placeholder">
                   </div>
 
                   <div class="col-12">
+                    <label class="sr-only" for="message" data-i18n="form.message">Message</label>
                     <textarea name="message" rows="6" class="form-control" id="message" placeholder="Message" required data-i18n="form.message" data-i18n-attr="placeholder"></textarea>
                   </div>
 
-                  <div class="ml-lg-auto col-lg-5 col-12">
+                  <div class="col-12 form-submit-wrap">
                     <button type="submit" class="form-control submit-btn" value="Send Message" aria-label="Send message" data-i18n="form.send" data-i18n-attr="value,aria-label" data-i18n-aria-label="form.sendAria" data-i18n-text="true">Send Message</button>
                   </div>
                 </div>
-                <p id="contactFormStatus" class="mt-3 mb-0" role="status" aria-live="polite" aria-atomic="true" hidden></p>
+                <p id="contactFormStatus" class="form-status mt-3 mb-0" role="status" aria-live="polite" aria-atomic="true" hidden></p>
               </form>
             </div>
           </div>
@@ -346,13 +407,13 @@ https://www.tooplate.com/view/2115-marvel
     </section>
 
     <!-- FOOTER -->
-    <footer class="footer py-5">
+    <footer class="footer">
           <div class="container">
               <div class="row">
 
                     <div class="col-lg-12 col-12">                                
-                        <p class="copyright-text text-center" data-i18n="footer.copyright">Copyright &copy; 2025 Abanoub Eshak</p>
-                        <p class="copyright-text text-center"><span data-i18n="footer.designedBy">Designed by</span> <a rel="nofollow noopener noreferrer" href="https://github.com/Abanoub13-7" target="_blank"><i class='bx bxl-github' aria-hidden="true"></i>Abanoub Eshak</a></p>
+                        <p class="copyright-text" data-i18n="footer.copyright">Copyright &copy; 2025 Abanoub Eshak</p>
+                        <p class="copyright-text"><span data-i18n="footer.designedBy">Designed by</span> <a rel="nofollow noopener noreferrer" href="https://github.com/Abanoub13-7" target="_blank"><i class='bx bxl-github' aria-hidden="true"></i> Abanoub Eshak</a></p>
                     </div>
                     
                 </div>

@@ -104,3 +104,7 @@ Historical baseline: before the 2026-10-18 email migration, the inline handler o
 ## 10. Preservation checklist for later phases
 
 All of the following must be preserved unless the owner decides otherwise: the four carousel destinations, the social/WhatsApp/email/GitHub destinations above, the education and project text, the certificate link, and the "Download Resume" intent (currently a direct link to the owner-supplied CV path). The contact form uses FormSubmit as documented in §8; the separate WhatsApp social link remains intact.
+
+## Projects carousel links — 2026-10-18
+
+Added: https://bride-list.vercel.app/ , https://juice-menu-eight.vercel.app/ , https://devoosaas.vercel.app/ . The four original links are unchanged. None could be tested live (no network).
