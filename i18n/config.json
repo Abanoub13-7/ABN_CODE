@@ -1,0 +1,7 @@
+{
+  "sourceLanguage": "en",
+  "targetLanguage": "ar",
+  "provider": "deepl",
+  "openaiModel": "gpt-4o-mini",
+  "preserveTerms": ["PrayAR", "Juice Menu", "Bride List", "Devoo", "Photo Artiste", "CRUD Products", "Abanoub Eshak"]
+}

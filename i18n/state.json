@@ -1,0 +1,486 @@
+{
+  "meta.title": {
+    "en": "81088caed1af",
+    "ar": "b25540caabad"
+  },
+  "meta.description": {
+    "en": "65499dd5791b",
+    "ar": "b088fd76d9f3"
+  },
+  "nav.toggle": {
+    "en": "1ec0b00d7e4a",
+    "ar": "fc1715ae89c3"
+  },
+  "nav.about": {
+    "en": "6b21fb791ac0",
+    "ar": "e5588b4e5f67"
+  },
+  "nav.projects": {
+    "en": "53e890d5f0ff",
+    "ar": "58ecc9f9cd4d"
+  },
+  "nav.resume": {
+    "en": "b3bd0b5a7049",
+    "ar": "bb909b69654d"
+  },
+  "nav.contact": {
+    "en": "b37456c4530b",
+    "ar": "10da61bd5549"
+  },
+  "theme.aria": {
+    "en": "7746a1615e36",
+    "ar": "4119a3e9b20a"
+  },
+  "theme.label": {
+    "en": "588a298133dc",
+    "ar": "583f0b734f35"
+  },
+  "language.switchToArabic": {
+    "en": "2e7be0bd8b1b",
+    "ar": "9940b4ee6056"
+  },
+  "language.switchToEnglish": {
+    "en": "028e62168e97",
+    "ar": "6fe0b31ff4ff"
+  },
+  "language.buttonArabic": {
+    "en": "9970632f55af",
+    "ar": "9970632f55af"
+  },
+  "language.buttonEnglish": {
+    "en": "649df08a448e",
+    "ar": "649df08a448e"
+  },
+  "hero.welcome": {
+    "en": "73ecd675a73b",
+    "ar": "3dfe73169ef8"
+  },
+  "hero.portfolio": {
+    "en": "284da2100cca",
+    "ar": "14986cb029e4"
+  },
+  "hero.greeting": {
+    "en": "9f9cb99be5c9",
+    "ar": "6ccdaa481c87"
+  },
+  "hero.roleDesigner": {
+    "en": "2ed8052049b3",
+    "ar": "c9d90b770771"
+  },
+  "hero.roleDeveloper": {
+    "en": "64d618ff95a6",
+    "ar": "0a027140e492"
+  },
+  "hero.description": {
+    "en": "36cc61ab6f99",
+    "ar": "477c99155b65"
+  },
+  "hero.downloadCv": {
+    "en": "c8eade842c08",
+    "ar": "5919a5e74373"
+  },
+  "hero.quote": {
+    "en": "0a708342e796",
+    "ar": "3389e68ac839"
+  },
+  "image.portfolio": {
+    "en": "c80fce829926",
+    "ar": "26530086aecb"
+  },
+  "projects.heading": {
+    "en": "49ce93aec7b8",
+    "ar": "03d385d30d88"
+  },
+  "carousel.previous": {
+    "en": "02b5641ec73a",
+    "ar": "6556c0526659"
+  },
+  "carousel.next": {
+    "en": "508fadca1ce1",
+    "ar": "bad67b0e7cbd"
+  },
+  "project.view": {
+    "en": "4cd4481f73bc",
+    "ar": "f51a9a856742"
+  },
+  "project.crudLink": {
+    "en": "5a101afecc2d",
+    "ar": "b13b9fd5ab86"
+  },
+  "project.crudAlt": {
+    "en": "38df4ef17a5d",
+    "ar": "a4afa03753be"
+  },
+  "project.crudName": {
+    "en": "8f6e4bdcff3b",
+    "ar": "6e4f379b820c"
+  },
+  "project.crudDescription": {
+    "en": "4e4140f1dde7",
+    "ar": "a3b65273ee21"
+  },
+  "project.churchLink": {
+    "en": "8fe696f3c483",
+    "ar": "c745032e3952"
+  },
+  "project.churchAlt": {
+    "en": "be3a66cc6aaf",
+    "ar": "f842f3b0e90d"
+  },
+  "project.churchName": {
+    "en": "e3f606ade0c8",
+    "ar": "e56247f73571"
+  },
+  "project.churchDescription": {
+    "en": "aa63af7335a8",
+    "ar": "98a6b5ed27dd"
+  },
+  "project.artistLink": {
+    "en": "d073d1cb9670",
+    "ar": "40b10ffdc4cc"
+  },
+  "project.artistAlt": {
+    "en": "95a6ac4f7e2f",
+    "ar": "6ee1899c23c0"
+  },
+  "project.artistName": {
+    "en": "af5899206fac",
+    "ar": "8e4e2b6fef26"
+  },
+  "project.artistDescription": {
+    "en": "a062c71d4c99",
+    "ar": "e6442033fc83"
+  },
+  "project.prayarLink": {
+    "en": "3cf82e5068a2",
+    "ar": "1257b5150798"
+  },
+  "project.prayarAlt": {
+    "en": "cf417393c80a",
+    "ar": "c6b19d55725b"
+  },
+  "project.prayarName": {
+    "en": "cbb81a922145",
+    "ar": "cbb81a922145"
+  },
+  "project.prayarDescription": {
+    "en": "dacdd2eda7b6",
+    "ar": "974ae6f10139"
+  },
+  "project.brideLink": {
+    "en": "573d19181b9a",
+    "ar": "7c45e65b9df7"
+  },
+  "project.brideAlt": {
+    "en": "092f67f4b68d",
+    "ar": "90c5659fe162"
+  },
+  "project.brideName": {
+    "en": "5bbdfba20e24",
+    "ar": "545b1c96517a"
+  },
+  "project.brideDescription": {
+    "en": "aed3f5c9b119",
+    "ar": "d4ae4aaa7a3d"
+  },
+  "project.juiceLink": {
+    "en": "904224baa06d",
+    "ar": "d2976a459a94"
+  },
+  "project.juiceAlt": {
+    "en": "d4bbc88274f6",
+    "ar": "cab00aaff016"
+  },
+  "project.juiceName": {
+    "en": "e9ff19fab0b6",
+    "ar": "532253f5ecef"
+  },
+  "project.juiceDescription": {
+    "en": "0dc22bafa3f2",
+    "ar": "133b9f0eeda7"
+  },
+  "project.devooLink": {
+    "en": "9dbefae23db0",
+    "ar": "7c6eae51e9ef"
+  },
+  "project.devooAlt": {
+    "en": "18188c1e75ee",
+    "ar": "702be83ccf83"
+  },
+  "project.devooName": {
+    "en": "e4469363f032",
+    "ar": "e4469363f032"
+  },
+  "project.devooDescription": {
+    "en": "2fb5c8233f50",
+    "ar": "96ced5391bf0"
+  },
+  "resume.projects": {
+    "en": "2306c2270342",
+    "ar": "0ef96ac8d839"
+  },
+  "experience.churchTitle": {
+    "en": "bd6bf553b193",
+    "ar": "3ba85c606d4e"
+  },
+  "experience.churchDescription": {
+    "en": "cfee8e684164",
+    "ar": "2f2e94aff2d4"
+  },
+  "experience.instituteTitle": {
+    "en": "f976a07a9d86",
+    "ar": "0f7dc9b57edf"
+  },
+  "experience.instituteDescription": {
+    "en": "f32b77bcbf40",
+    "ar": "bda258fe9c0b"
+  },
+  "experience.salonTitle": {
+    "en": "9687161758b5",
+    "ar": "c2ba1247b0e5"
+  },
+  "experience.salonDescription": {
+    "en": "1c429021fac9",
+    "ar": "baf6d1106247"
+  },
+  "experience.prayarTitle": {
+    "en": "cbb81a922145",
+    "ar": "cbb81a922145"
+  },
+  "experience.prayarDescription": {
+    "en": "0bb52bdebbe6",
+    "ar": "36eba9aa6f6b"
+  },
+  "experience.prayarFeature1": {
+    "en": "7dce3f11de95",
+    "ar": "dfff57e8b5dd"
+  },
+  "experience.prayarFeature2": {
+    "en": "166fab4006a9",
+    "ar": "f42098c9d4fd"
+  },
+  "experience.prayarFeature3": {
+    "en": "de86b667d5dc",
+    "ar": "8b49389bf6c0"
+  },
+  "experience.prayarLink": {
+    "en": "3cf82e5068a2",
+    "ar": "1257b5150798"
+  },
+  "experience.juiceTitle": {
+    "en": "e9ff19fab0b6",
+    "ar": "e9ff19fab0b6"
+  },
+  "experience.juiceDescription": {
+    "en": "35ee627c75e2",
+    "ar": "24bee172e95f"
+  },
+  "experience.juiceFeature1": {
+    "en": "06913ee67cdf",
+    "ar": "a759763d8d52"
+  },
+  "experience.juiceFeature2": {
+    "en": "f943d9d3555f",
+    "ar": "060126617edd"
+  },
+  "experience.juiceFeature3": {
+    "en": "582557f0aae3",
+    "ar": "b07f6108345d"
+  },
+  "experience.juiceLink": {
+    "en": "904224baa06d",
+    "ar": "29bcf3dfbe8a"
+  },
+  "experience.brideTitle": {
+    "en": "5bbdfba20e24",
+    "ar": "5bbdfba20e24"
+  },
+  "experience.brideDescription": {
+    "en": "e28abe8b7205",
+    "ar": "fbde38cd2606"
+  },
+  "experience.brideFeature1": {
+    "en": "26d4c145114a",
+    "ar": "7735d95b8553"
+  },
+  "experience.brideFeature2": {
+    "en": "0b4376568c26",
+    "ar": "06e0ab03bbe7"
+  },
+  "experience.brideFeature3": {
+    "en": "938d1fd6be9e",
+    "ar": "805475f02b67"
+  },
+  "experience.brideLink": {
+    "en": "573d19181b9a",
+    "ar": "ff5d4153e35a"
+  },
+  "experience.webAppTech": {
+    "en": "76fa1d19daa1",
+    "ar": "739e228ee24a"
+  },
+  "education.heading": {
+    "en": "2836e4cc3008",
+    "ar": "f18ce12b8af0"
+  },
+  "education.institute": {
+    "en": "82d0584c0c34",
+    "ar": "804f607063c1"
+  },
+  "education.country": {
+    "en": "1c39abf68e93",
+    "ar": "9f5f187b5811"
+  },
+  "education.degree": {
+    "en": "b0e9dc0e62fb",
+    "ar": "d4028ff132d9"
+  },
+  "education.grade": {
+    "en": "0f8ad890813b",
+    "ar": "bd4c4ed82cf9"
+  },
+  "education.projectLabel": {
+    "en": "72acf572814a",
+    "ar": "66f7efb80f00"
+  },
+  "education.projectTitle": {
+    "en": "8c9cfef52080",
+    "ar": "2ec21e554bb0"
+  },
+  "education.projectGrade": {
+    "en": "e2cd740b343d",
+    "ar": "12a65632ec05"
+  },
+  "education.course": {
+    "en": "9adbbf981a60",
+    "ar": "bed80794348d"
+  },
+  "education.courseHours": {
+    "en": "e315aa3fd67f",
+    "ar": "037e553b8a19"
+  },
+  "education.courseDescription": {
+    "en": "5718edb17ed0",
+    "ar": "3a2b3ea83804"
+  },
+  "education.certificate": {
+    "en": "3c90873d34c6",
+    "ar": "223dd727cb8e"
+  },
+  "contact.mapTitle": {
+    "en": "b3bce529c9f9",
+    "ar": "f3ccfb0f73cc"
+  },
+  "contact.heading": {
+    "en": "5ec5788b3970",
+    "ar": "5fc8bca14e8e"
+  },
+  "contact.facebook": {
+    "en": "8191b0deca56",
+    "ar": "e04ce163543e"
+  },
+  "contact.facebookTitle": {
+    "en": "cbe648909034",
+    "ar": "82da67b21124"
+  },
+  "contact.instagram": {
+    "en": "ab61bcfb59cf",
+    "ar": "97ecadaddf7e"
+  },
+  "contact.instagramTitle": {
+    "en": "5721bbef40b2",
+    "ar": "5721bbef40b2"
+  },
+  "contact.linkedin": {
+    "en": "a052346be1a7",
+    "ar": "64d2ea4e6e6a"
+  },
+  "contact.linkedinTitle": {
+    "en": "7728240c80b6",
+    "ar": "6b6390a44161"
+  },
+  "contact.whatsapp": {
+    "en": "be3a5d53f656",
+    "ar": "f8d39177667f"
+  },
+  "contact.whatsappTitle": {
+    "en": "666b4522a635",
+    "ar": "b336fc558722"
+  },
+  "contact.github": {
+    "en": "247665a4783f",
+    "ar": "abe8964f718b"
+  },
+  "contact.githubTitle": {
+    "en": "64b2b6d12bfe",
+    "ar": "5442e2b64fa0"
+  },
+  "contact.formHeading": {
+    "en": "2a6c4b1407ea",
+    "ar": "03c329a02cb5"
+  },
+  "form.name": {
+    "en": "f48db7e9d3ef",
+    "ar": "0a92494ea1eb"
+  },
+  "form.email": {
+    "en": "3fa6f5fb505a",
+    "ar": "0915ef8ea533"
+  },
+  "form.message": {
+    "en": "68f4145fee7d",
+    "ar": "bf04bed9b3fa"
+  },
+  "form.send": {
+    "en": "6dcd151222c0",
+    "ar": "07d759b41caf"
+  },
+  "form.sendAria": {
+    "en": "c70a890d1411",
+    "ar": "07d759b41caf"
+  },
+  "form.emailSubject": {
+    "en": "a0c81b5a8911",
+    "ar": "845cd419f7e1"
+  },
+  "form.errorName": {
+    "en": "fffccfb74afa",
+    "ar": "3f9d423fb96c"
+  },
+  "form.errorEmail": {
+    "en": "d2306dd8970f",
+    "ar": "f212f08c6574"
+  },
+  "form.errorMessage": {
+    "en": "d83bf3f0ebb4",
+    "ar": "aca7ed4e9edb"
+  },
+  "form.sending": {
+    "en": "d6537e658532",
+    "ar": "4244a500ed5b"
+  },
+  "form.activation": {
+    "en": "16b70a285a6d",
+    "ar": "61c2119aa437"
+  },
+  "form.failure": {
+    "en": "f6522388545a",
+    "ar": "11b9e193f288"
+  },
+  "form.success": {
+    "en": "23889ea8adee",
+    "ar": "4e7022da0584"
+  },
+  "form.networkFailure": {
+    "en": "101a44012460",
+    "ar": "e207c5f9f9e2"
+  },
+  "footer.copyright": {
+    "en": "b6459879f8cd",
+    "ar": "78e2351dd6f2"
+  },
+  "footer.designedBy": {
+    "en": "53bc1e53ff62",
+    "ar": "6341fa44c502"
+  }
+}
